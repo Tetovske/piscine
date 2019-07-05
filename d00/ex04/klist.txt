@@ -1,0 +1,5 @@
+Credentials cache: API:9765
+        Principal: ltesha@21-SCHOOL.RU
+
+  Issued                Expires               Principal
+Jul  2 12:44:04 2019  Jul  3 12:44:04 2019  krbtgt/21-SCHOOL.RU@21-SCHOOL.RU

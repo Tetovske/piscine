@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltesha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/16 22:27:01 by ltesha            #+#    #+#             */
-/*   Updated: 2019/07/17 15:05:19 by ltesha           ###   ########.fr       */
+/*   Created: 2019/07/18 21:23:31 by ltesha            #+#    #+#             */
+/*   Updated: 2019/07/18 22:19:06 by ltesha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "ft_header.h"
 
-typedef struct	s_list
+void	prog_name(char *p_name)
 {
-	struct s_list	*next;
-	void			*data;
-}				t_list;
+	extern char *g_prog_name;
+	int			i;
 
-t_list			*ft_create_elem(void *data);
-
-#endif
+	i = -1;
+	while (p_name[++i] == '.' || p_name[i] == '/')
+		;
+	g_prog_name = &p_name[i];
+}

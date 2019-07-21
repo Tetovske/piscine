@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   btree_apply_infix.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltesha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/16 22:27:01 by ltesha            #+#    #+#             */
-/*   Updated: 2019/07/17 15:05:19 by ltesha           ###   ########.fr       */
+/*   Created: 2019/07/19 20:20:01 by ltesha            #+#    #+#             */
+/*   Updated: 2019/07/19 20:27:28 by ltesha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "ft_btree.h"
 
-typedef struct	s_list
+void	btree_apply_infix(t_btree *root, void (*applyf)(void *))
 {
-	struct s_list	*next;
-	void			*data;
-}				t_list;
-
-t_list			*ft_create_elem(void *data);
-
-#endif
+	if (root)
+	{
+		btree_apply_infix(root->left);
+		(*applyf)(root->item);
+		btree_apply_infix(root->right);
+	}
+}

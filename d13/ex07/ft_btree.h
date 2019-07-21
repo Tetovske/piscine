@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_btree.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltesha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/16 22:27:01 by ltesha            #+#    #+#             */
-/*   Updated: 2019/07/17 15:05:19 by ltesha           ###   ########.fr       */
+/*   Created: 2019/07/18 22:59:07 by ltesha            #+#    #+#             */
+/*   Updated: 2019/07/18 23:16:45 by ltesha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#ifndef FT_BTREE_H
+# define FT_BTREE_H
 
-typedef struct	s_list
+typedef struct		s_btree
 {
-	struct s_list	*next;
-	void			*data;
-}				t_list;
-
-t_list			*ft_create_elem(void *data);
+	struct s_btree	*left;
+	struct s_btree	*right;
+	void			*item;
+}					t_btree;
 
 #endif

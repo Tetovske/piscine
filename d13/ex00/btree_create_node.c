@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   btree_create_node.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltesha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/16 22:27:01 by ltesha            #+#    #+#             */
-/*   Updated: 2019/07/17 15:05:19 by ltesha           ###   ########.fr       */
+/*   Created: 2019/07/18 23:02:31 by ltesha            #+#    #+#             */
+/*   Updated: 2019/07/18 23:17:51 by ltesha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "ft_btree.h"
 
-typedef struct	s_list
+t_btree		*btree_create_node(void *item)
 {
-	struct s_list	*next;
-	void			*data;
-}				t_list;
+	t_btree	*node;
 
-t_list			*ft_create_elem(void *data);
-
-#endif
+	node = (t_btree *)malloc(sizeof(t_btree));
+	if (!node)
+		return (0);
+	node->left = 0;
+	node->right = 0;
+	node->item = item;
+	return (node);
+}

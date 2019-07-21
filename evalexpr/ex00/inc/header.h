@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltesha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/16 22:27:01 by ltesha            #+#    #+#             */
-/*   Updated: 2019/07/17 15:05:19 by ltesha           ###   ########.fr       */
+/*   Created: 2019/07/20 19:12:34 by ltesha            #+#    #+#             */
+/*   Updated: 2019/07/21 23:25:53 by ltesha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#ifndef HEADER_H
+# define HEADER_H
 
-typedef struct	s_list
-{
-	struct s_list	*next;
-	void			*data;
-}				t_list;
+# include <unistd.h>
+# include <stdlib.h>
 
-t_list			*ft_create_elem(void *data);
+void	ft_putchar(char c);
+void	ft_putstr(char *s);
+int		matoi(char *s);
+void	ft_putnbr(int num);
+int		eval_expr(char **s);
+int		eval_expr_high_pr(char **s);
+int		parse_num(char **s);
 
 #endif

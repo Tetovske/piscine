@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltesha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/16 22:27:01 by ltesha            #+#    #+#             */
-/*   Updated: 2019/07/17 15:05:19 by ltesha           ###   ########.fr       */
+/*   Created: 2019/07/20 20:27:38 by ltesha            #+#    #+#             */
+/*   Updated: 2019/07/21 23:11:30 by ltesha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "header.h"
 
-typedef struct	s_list
+void	ft_putchar(char c)
 {
-	struct s_list	*next;
-	void			*data;
-}				t_list;
+	write(1, &c, 1);
+}
 
-t_list			*ft_create_elem(void *data);
+void	ft_putstr(char *s)
+{
+	int i;
 
-#endif
+	if (!s)
+		return ;
+	i = -1;
+	while (s[++i] != '\0')
+		ft_putchar(s[i]);
+}

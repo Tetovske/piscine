@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   libs.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltesha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/16 22:27:01 by ltesha            #+#    #+#             */
-/*   Updated: 2019/07/17 15:05:19 by ltesha           ###   ########.fr       */
+/*   Created: 2019/07/18 15:09:39 by ltesha            #+#    #+#             */
+/*   Updated: 2019/07/18 18:21:09 by ltesha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#ifndef LIBS_H
+# define LIBS_H
 
-typedef struct	s_list
-{
-	struct s_list	*next;
-	void			*data;
-}				t_list;
+# include <unistd.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
 
-t_list			*ft_create_elem(void *data);
+void	ft_putchar(char s);
+void	ft_putstr(char *str);
+int		f_display(char *str);
 
 #endif

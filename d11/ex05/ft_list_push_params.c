@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_push_back.c                                :+:      :+:    :+:   */
+/*   ft_list_push_params.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltesha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/16 22:53:59 by ltesha            #+#    #+#             */
-/*   Updated: 2019/07/17 15:04:37 by ltesha           ###   ########.fr       */
+/*   Created: 2019/07/17 16:02:29 by ltesha            #+#    #+#             */
+/*   Updated: 2019/07/17 17:12:37 by ltesha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void	ft_list_push_back(t_list **begin_list, void *data)
+void	ft_add_elem(t_list **list, void *data)
 {
+	t_list *node;
 	t_list *head;
 
-	if (!*begin_list)
-		*begin_list = ft_create_elem(data);
+	if (!(*list))
+		*list = ft_create_elem(data);
 	else
 	{
-		head = *begin_list;
-		while ((*begin_list)->next)
-			*begin_list = (*begin_list)->next;
-		(*begin_list)->next = ft_create_elem(data);
-		(*begin_list)->next->next = 0;
-		(*begin_list)->next->data = data;
-		*begin_list = head;
+		head = *list;
+		while (head->next)
+			head = head->next;
+		node = ft_create_elem(data);
+		node->next = 0;
+		head->next = node;
 	}
+}
+
+t_list	*ft_list_push_params(int ac, char **av)
+{
+	t_list *list;
+
+	list = 0;
+	while (--ac >= 0)
+		ft_add_elem(&list, av[ac]);
+	return (list);
 }
